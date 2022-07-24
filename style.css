@@ -1,0 +1,173 @@
+:root {
+    --light-green: #baf8ba;
+    --light-red: #f59382;
+    --red: #ce0f0f;
+    --cadet: #517174;
+    --slate: #325453;
+    --burlywood: #dcbe87;
+    --shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+body {
+    margin: 0%;
+    background-color: #f5f5f5;
+}
+
+main {
+    text-align: center;
+    
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    background-color: white;
+    font-family: 'Edu VIC WA NT Beginner' ;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    
+}
+.lib  {
+    font-size: 36px;
+    text-decoration: none;
+    color: black;
+}
+.lib:hover{
+    color: var(--slate);
+}
+
+#filters {
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+}
+
+#filters button{
+    padding: 30.5px;
+    font-size: 14px;
+    border: none;
+    background-color: transparent;
+}  
+
+#filters :hover, header button:hover  {
+    background-color: var(--cadet);
+    color: white;
+}
+
+header > button {
+    padding: 20px 30px;
+    border: none;
+    background-color: transparent; 
+    font-size: 32px;
+    transition: 2ms;
+    align-self: center;
+}
+
+#collection {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 20px;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    row-gap: 25px;
+    font-size: 16px;
+    font-family: 'Fira Sans';
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    box-shadow: var(--shadow);
+    
+}
+.title {
+    font-size: 30px;
+    
+}
+.author {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 40px;
+    
+}
+
+.book .read_status{
+    /* background-color: var(--cadet); */
+}
+.book .read_status:hover {
+    background-color: var(--light-green);
+}
+
+.book .read_status.read{
+    background-color: var(--light-green);
+}
+
+.book .read_status.read:hover{
+    background-color: lightgray;
+}
+
+
+.book button {
+    border: none;
+    background-color: lightgray;
+    border-radius: 15px;
+    height: 50px;
+    width: 80px;
+    font-size: 16px;
+    /* border: 1px solid lightgray; */
+    cursor: pointer;
+}
+.controls button:hover{
+    transform: scale(1.3);
+}
+
+.book .favorite {
+    background-color: transparent;
+    width: 40px;
+
+}
+
+.book .favorite:hover {
+    color: var(--red);
+    font-variation-settings:'FILL' 1;
+
+}
+
+.favorite.fav {
+    color: var(--red);
+    font-variation-settings:'FILL' 1;
+}
+
+.favorite.fav:hover {
+    color: black;
+    font-variation-settings:'FILL' 0;
+    
+}
+
+.book .delete {
+    /* background-color: var(--cadet); */
+}
+.book .delete:hover {
+    background-color: var(--light-red);
+    
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+}
