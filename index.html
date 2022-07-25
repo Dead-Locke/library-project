@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -15,7 +14,7 @@
 </head>
 <body>
     <header>
-        <a href="url" class="lib">libr</a>
+        <a href="" class="lib">libr</a>
         <div id="filters">
             <button class="all">collection</button>
             <button class="read">read</button>
@@ -24,6 +23,24 @@
         <button id="addNew"><span class="material-symbols-outlined">
             library_add
             </span></button>
+
+            <div id="modal">
+                <div>
+                    <form action="">
+                        <div>Add Book</div>
+                        <input type="text" id="titleField" placeholder="Title">
+                        <input type="text" id="authorField" placeholder="Author">
+                        <input type="number" id="pageField" placeholder="Pages">
+                        <div class="controls">
+                            <button class="favorite" ><span class="material-symbols-outlined">favorite</span>
+                            </button>
+                            <button class="read_status"><span class="material-symbols-outlined">auto_stories</span>
+                            </button>
+                        </div>
+                        <input type="submit">
+                    </form>
+                </div>
+            </div>
     </header>
     <main>
         <div id="collection"></div>
@@ -34,7 +51,7 @@
                 <div class="author">Temp Author</div>
                 <div class="pages"><p class="num">0</p> pages</div>
                 <div class="controls">
-                    <button class="favorite"><span class="material-symbols-outlined">favorite</span>
+                    <button class="favorite" ><span class="material-symbols-outlined">favorite</span>
                     </button>
                     <button class="read_status"><span class="material-symbols-outlined">auto_stories</span>
                     </button>
@@ -45,5 +62,6 @@
         </template>
 
     </main>
+    <script src="script.js" defer></script>
 </body>
 </html>
