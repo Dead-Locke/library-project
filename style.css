@@ -2,6 +2,7 @@
     --light-green: #baf8ba;
     --light-red: #f59382;
     --red: #ce0f0f;
+    --green: #01c501;
     --cadet: #517174;
     --slate: #325453;
     --burlywood: #dcbe87;
@@ -12,6 +13,10 @@
 body {
     margin: 0%;
     background-color: #f5f5f5;
+    height: 100vh;
+
+    display:flex; 
+    flex-direction:column; 
 }
 
 main {
@@ -38,26 +43,22 @@ header{
     color: var(--slate);
 }
 
-#filters {
-    display: flex;
-    width: 30%;
-    justify-content: space-evenly;
-}
+
 
 #filters button{
-    padding: 30.5px;
+    padding: 25.5px;
     font-size: 14px;
     border: none;
     background-color: transparent;
 }  
 
-#filters :hover, #addNew:hover  {
+#filters :hover, #addNewButton:hover  {
     background-color: var(--cadet);
     color: white;
 }
 
-#addNew {
-    padding: 20px 30px;
+#addNewButton {
+    padding: 15px 30px;
     border: none;
     background-color: transparent; 
     font-size: 32px;
@@ -78,17 +79,19 @@ header{
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
 }
 
-#modal form {
+
+
+#addBookForm {
     display: flex;
     flex-direction: column;
     gap: 20px;
     text-align: center;
     width: 250px;
     height: auto;
-    background-color: white;
+    background-color: #f0f0f0;
     padding: 30px;
     border-radius: 15px;
     font-size: 28px;
@@ -97,9 +100,53 @@ header{
 form input {
     height: 40px;
     border-radius: 10px;
-    border: 1px solid gray;
+    border: none;
     padding: 0 5px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Fire Sans';
+    
 }
+form input:focus {
+    outline: 2px solid var(--cadet);
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+label {
+    user-select: none;
+}
+
+input[type=checkbox]:checked + span {
+    font-variation-settings:'FILL' 1;
+}
+
+#f:checked + span {
+    color: var(--red);
+}
+
+#r:checked + span {
+    color: var(--green);
+}
+
+.btn {
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--cadet);
+    color: white;
+    font-family: 'Fire Sans';
+    font-size: 24px;
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    background-color: var(--slate);
+}
+
+
 /* -----------book collection--------- */
 
 #collection {
@@ -107,6 +154,7 @@ form input {
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     margin: 20px;
+    
 }
 
 .book {
@@ -143,57 +191,57 @@ form input {
     
 }
 
-.read_status:hover {
-    background-color: var(--light-green);
+.controls, .form_status {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.read_status.read{
-    background-color: var(--light-green);
+.read_status:hover, .read{
+    color:var(--green) ;
+    font-variation-settings:'FILL' 1;
 }
 
-.read_status.read:hover{
-    background-color: lightgray;
-}
 
-.controls button {
+
+.controls button, .form_status button {
     border: none;
     background-color: transparent;
     border-radius: 15px;
-    height: 50px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     font-size: 16px;
     /* border: 1px solid lightgray; */
     cursor: pointer;
 }
-.controls button:hover{
+.controls button:hover, .form_status button:hover, label:hover{
     transform: scale(1.3);
-    font-variation-settings:'FILL' 1;
 }
 
-.favorite:hover {
+.favorite:hover, .fav, .delete:hover {
     color: var(--red);
     font-variation-settings:'FILL' 1;
 
 }
 
-.favorite.fav {
-    color: var(--red);
-    font-variation-settings:'FILL' 1;
-}
-
-.favorite.fav:hover {
-    color: black;
-    font-variation-settings:'FILL' 0;
-    
-}
 
 
-.delete:hover {
-    background-color: var(--light-red);
-    
-}
-
-.controls {
+/* ---------------footer -------------- */
+footer {
     display: flex;
-    justify-content: space-around;
+    margin-top:auto; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Fire Sans';
+    font-size: 16px;
+    padding: 1rem;
 }
+.link-icon {
+    width: 25px;
+}
+
+
+
+
+
