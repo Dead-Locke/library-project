@@ -17,8 +17,9 @@ Book.prototype.info = function () {
 }
 
 function addNew(title, author, pages = 0, read = false, favorite = false) {
-    var newBook = new Book(title, author, pages, read)
+    var newBook = new Book(title, author, pages, read,favorite)
     myLibrary.push(newBook);
+    console.log(newBook)
 }
 
 
@@ -30,11 +31,17 @@ const dune = new Book('Dune', "Frank Herbert", 412, true, true)
 myLibrary.push(hobbit, lotr, andromeda_strain, dune)
 
 // ---------functions and listeners----------------
-const addNewButton = document.getElementById('addNew');
+const addNewButton = document.getElementById('addNewButton');
 const books = document.querySelectorAll('.book');
 var favButtons = document.querySelectorAll('.favorite');
 var readButtons = document.querySelectorAll('.read_status');
 var deleteButtons = document.querySelectorAll('.delete');
+const modal = document.getElementById('modal')
+const newBookForm = document.getElementById('addBookForm');
+const submitBtn = document.querySelector('.btn');
+
+
+
 
 
 function displayBooks(array) {
@@ -93,11 +100,26 @@ function initialize(){
     deleteButtons.forEach(x => x.onclick = () => deleteBook(x)) 
 }
 
+closeModal = () => modal.style.display = "none";
 
+newBookForm.onsubmit = (e) => {
+    e.preventDefault();
+    let title = newBookForm.elements['titleField']
+    let author = newBookForm.elements['authorField']
+    let pages = newBookForm.elements['pageField']
+    let read = newBookForm.elements['f']
+    let fav = newBookForm.elements['r']
+    console.log(title.value, author.value, pages.value, read.value, fav.value)
+    addNew(title.value, author.value, pages.value, read.value, fav.value);
+    displayBooks(myLibrary);
+    closeModal()
+    addBookForm.reset();
+}
+
+
+addNewButton.onclick = () => modal.style.display = 'flex'
+window.onclick = (e) => {if(e.target == modal) closeModal()}
+    
 displayBooks(myLibrary)
-
-
-
-
 
 
