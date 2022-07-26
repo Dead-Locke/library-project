@@ -16,31 +16,30 @@
     <header>
         <a href="" class="lib">libr</a>
         <div id="filters">
-            <button class="all">collection</button>
-            <button class="read">read</button>
-            <button class="unread">unread</button>
+            <button class="all_filter">collection</button>
+            <button class="read_filter">read</button>
+            <button class="unread_filter">unread</button>
         </div>
-        <button id="addNew"><span class="material-symbols-outlined">
+        <button id="addNewButton"><span class="material-symbols-outlined">
             library_add
             </span></button>
 
             <div id="modal">
                 <div>
-                    <form action="">
-                        <div>Add Book</div>
-                        <input type="text" id="titleField" placeholder="Title">
-                        <input type="text" id="authorField" placeholder="Author">
-                        <input type="number" id="pageField" placeholder="Pages">
-                        <div class="controls">
-                            <button class="favorite" ><span class="material-symbols-outlined">favorite</span>
-                            </button>
-                            <button class="read_status"><span class="material-symbols-outlined">auto_stories</span>
-                            </button>
+                    <form action="" id="addBookForm">
+                        <div>New Book</div>
+                        <input type="text" id="titleField" placeholder="Title" maxlength="60" required>
+                        <input type="text" id="authorField" placeholder=" Author" maxlength="50" required>
+                        <input type="number" id="pageField" placeholder="    Pages">
+                        <div class="form_status">
+                            <label for="f" class="favorite"><input id='f'type="checkbox"></input><span class="material-symbols-outlined ">favorite</span></label>
+                            <label for="r" class="read_status" ><input id='r' type="checkbox"></input><span class="material-symbols-outlined">auto_stories</span></label>
                         </div>
-                        <input type="submit">
+                        <button type="submit" class="btn">Add Book</button>
                     </form>
                 </div>
             </div>
+
     </header>
     <main>
         <div id="collection"></div>
@@ -62,6 +61,15 @@
         </template>
 
     </main>
+
+    <footer>
+        Dead-Locke ©
+        <script>document.write(new Date().getFullYear())</script>
+        
+        <a href="https://github.com/Dead-Locke/">
+        <img class="link-icon" src="imgs/GitHub-Mark.png" alt="GitHub Link"></a>
+    </footer>
+    
     <script src="script.js" defer></script>
 </body>
 </html>
