@@ -49,7 +49,7 @@ function displayBooks(array) {
         var a = clone.querySelector('.author'); 
         var n = clone.querySelector('.num') 
 
-        clone.querySelector('.book').dataset.index = array.indexOf(bk); //assign index to book from library array
+        clone.querySelector('.book').dataset.index = myLibrary.indexOf(bk); //assign index to book from library array
 
         if (bk.read) clone.querySelector('.read_status').classList.add('read') //toggle read status
         if (bk.favorite) clone.querySelector('.favorite').classList.add('fav') //toggle fav status
@@ -110,10 +110,10 @@ function updateCount(){
     let booksFav = myLibrary.filter(x=> x.favorite)
     let allBooks = myLibrary.length
 
-    allCount.innerText = `(${allBooks})`
-    readCount.innerText = `(${booksRead.length})`
-    unreadCount.innerText = `(${booksUnread})`
-    favCount.innerText = `(${booksFav.length})`
+    allCount.innerText = `- ${allBooks}`
+    readCount.innerText = `- ${booksRead.length}`
+    unreadCount.innerText = `- ${booksUnread}`
+    favCount.innerText = `- ${booksFav.length}`
 }
 
 closeModal = () => modal.style.display = "none";
