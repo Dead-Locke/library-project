@@ -110,10 +110,10 @@ function updateCount(){
     let booksFav = myLibrary.filter(x=> x.favorite)
     let allBooks = myLibrary.length
 
-    allCount.innerText = `- ${allBooks}`
-    readCount.innerText = `- ${booksRead.length}`
-    unreadCount.innerText = `- ${booksUnread}`
-    favCount.innerText = `- ${booksFav.length}`
+    allCount.innerText = ` - ${allBooks}`
+    readCount.innerText = ` - ${booksRead.length}`
+    unreadCount.innerText = ` - ${booksUnread}`
+    favCount.innerText = ` - ${booksFav.length}`
 }
 
 closeModal = () => modal.style.display = "none";
